@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<gate type="non-auto">
+	<label>Notificar incidencias</label>
+	<rate></rate>
+	<server>81.35.160.199</server>
+	<port>3425</port>
+	<web_service>REST/jaxrs/mockserver</web_service>
+	
+	
+	<activity type="incident_type">
+		<order>1</order>
+		<query>
+			<message>Tipo de incidencia</message>
+			<slidable>no</slidable>
+			
+			<title>Seleccione la incidencia</title>
+			<type>Acera Carretera Señalización Alumbrado Limpieza Arbolado</type>
+		</query>
+	</activity>
+	
+	
+	<activity type="make_photos">
+		<order>2</order>
+		<query>
+			<message>Añada alguna imagen</message>
+			<!-- Con "slidable" indicamos si la pantalla va a ser deslizable o fija -->
+			<!-- Si "slidable" entonces la galería sale mal :s -->
+			<slidable>no</slidable>
+			
+			<title></title>
+			<maxphotos>4</maxphotos>
+		</query>
+	</activity>
+	
+	
+	<activity type="select_coordinates">
+		<order>3</order>
+		<query>
+			<message>Indique la posición</message>
+			<slidable>no</slidable>
+			
+			<title></title>
+		</query>
+	</activity>
+	
+	
+	<activity type="edit_form">
+		<order>4</order>
+		<query>
+			<message>Formulario de contacto y descripción</message>
+			<slidable>yes</slidable>
+			
+			<title></title>
+			<fields>
+				<field label="Nombre de usuario" type="text"></field>
+				<field label="Correo electrónico" type="email"></field>
+				<field label="Rellene su incidencia en el cuadro a continuación" type="text">
+					<options>
+						<initial_text>Haga aquí su comentario</initial_text>
+						<size>big</size>
+					</options>
+				</field>
+			</fields>
+		</query>
+	</activity>
+</gate>
